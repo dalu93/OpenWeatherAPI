@@ -9,6 +9,6 @@
 #import "ResponseCurrentWeather.h"
 
 @implementation ResponseCurrentWeather
-@synthesize name,coord,clouds,sys,main,base,wind,visibility,dt,id,weather;
+@synthesize name,coord,clouds,sys,main,base,wind,visibility,dt,id,weather,rain;
 
 @end

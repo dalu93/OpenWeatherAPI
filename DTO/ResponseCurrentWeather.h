@@ -13,6 +13,7 @@
 #import "wind.h"
 #import "clouds.h"
 #import "sys.h"
+#import "rain.h"
 
 @interface ResponseCurrentWeather : AbstractResponse
 
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) clouds *clouds;
 @property (nonatomic, strong) NSNumber *dt;
 @property (nonatomic, strong) sys *sys;
+@property (nonatomic, strong) rain *rain;
 @property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) NSString *name;
 
