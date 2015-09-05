@@ -146,7 +146,7 @@ typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
   
   NSMutableDictionary *parametersDict = [NSMutableDictionary new];
   [parametersDict addEntriesFromDictionary:@{ kRequestDictionaryLocationKey : cityName,
-                                              kRequestDictionaryUnitsKey : kRequestDictionaryUnitsValue}]];
+                                              kRequestDictionaryUnitsKey : kRequestDictionaryUnitsValue}];
   if (days > 0)
   {
     [parametersDict setValue:@(days) forKey:kRequestDictionaryCountKey];
