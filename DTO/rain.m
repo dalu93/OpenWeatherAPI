@@ -18,8 +18,7 @@
 
 + (JSONKeyMapper *)keyMapper
 {
-  // property name cannot contain numbers 
-  return [[JSONKeyMapper alloc] initWithDictionary:@{@"1h" : @"hour"}];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{@"1h":@"hour"}];
 }
 
 @end

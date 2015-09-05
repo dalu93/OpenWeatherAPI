@@ -9,11 +9,6 @@
 #import "ResponseCurrentWeather.h"
 
 @implementation ResponseCurrentWeather
-@synthesize name,cod,coord,clouds,sys,rain,main,base,wind,visibility,dt,id,weather;
-
-+ (BOOL)propertyIsOptional:(NSString *)propertyName
-{
-  return YES;
-}
+@synthesize name,coord,clouds,sys,main,base,wind,visibility,dt,id,weather;
 
 @end
