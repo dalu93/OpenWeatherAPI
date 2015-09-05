@@ -10,6 +10,11 @@
 #import "ResponseCurrentWeather.h"
 #import "ResponseForecastWeather.h"
 
+static NSString * const kOpenWeatherConnectErroDomain = @"Connect";
+
+static NSString * const kOpenWeatherConnectMissingCityName = @"Missing city name";
+static NSInteger const kOpenWeatherConnectMissingCityNameErrorCode = -1;
+
 @class AbstractResponse;
 
 typedef void (OpenWeatherSuccessBlock)(NSError *error, AbstractResponse *response);

@@ -113,9 +113,9 @@ typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
                                                 days:days];
   if (! parameters)
   {
-    NSError *error = [NSError errorWithDomain:@"Connect"
-                                         code:-1
-                                     userInfo:@{NSLocalizedDescriptionKey : @"Missing city name"}];
+    NSError *error = [NSError errorWithDomain:kOpenWeatherConnectErroDomain
+                                         code:kOpenWeatherConnectMissingCityNameErrorCode
+                                     userInfo:@{NSLocalizedDescriptionKey : kOpenWeatherConnectMissingCityName}];
     if (successBlock)
       successBlock(error,nil);
   }
