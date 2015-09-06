@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.dependency 'JSONModel'
   s.dependency 'AFNetworking'
 
-  s.source   = { :git => "https://github.com/dalu93/OpenWeatherAPI.git" }
+  s.source   = { :git => "https://github.com/dalu93/OpenWeatherAPI.git" :tag => s.version }
   s.source_files = '**/**/*.{c,h,m,mm,cpp,a,framework,pch}'
 
 end
