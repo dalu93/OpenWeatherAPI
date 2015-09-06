@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ResponseCurrentWeather.h"
-#import "ResponseForecastWeather.h"
 
 static NSString * const kOpenWeatherConnectErroDomain = @"Connect";
 
 static NSString * const kOpenWeatherConnectMissingCityName = @"Missing city name";
 static NSInteger const kOpenWeatherConnectMissingCityNameErrorCode = -1;
 
+@class ResponseCurrentWeather;
+@class ResponseForecastWeather;
 @class AbstractResponse;
 
-typedef void (OpenWeatherSuccessBlock)(NSError *error, AbstractResponse *response);
+typedef void (^OpenWeatherSuccessBlock)(NSError *error, AbstractResponse *response);
 
 @interface OpenWeatherConnect : NSObject
 

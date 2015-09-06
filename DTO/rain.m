@@ -9,7 +9,7 @@
 #import "rain.h"
 
 @implementation rain
-@synthesize hour;
+@synthesize hour, threeHour;
 
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
@@ -18,7 +18,8 @@
 
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{@"1h":@"hour"}];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{@"1h":@"hour",
+                                                     @"3h":@"threeHour"}];
 }
 
 @end

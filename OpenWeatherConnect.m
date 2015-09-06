@@ -7,9 +7,11 @@
 //
 
 #import "OpenWeatherConnect.h"
+#import "ResponseCurrentWeather.h"
+#import "ResponseForecastWeather.h"
 #import <AFNetworking/AFNetworking.h>
 
-static NSString * const kOpenWeatherBaseUrl = @"http://http://api.openweathermap.org/data/";
+static NSString * const kOpenWeatherBaseUrl = @"http://api.openweathermap.org/data";
 static NSString * const kOpenWeatherAPIVersion = @"2.5";
 static NSString * const kOpenWeatherCurrentWeatherCommand = @"weather";
 static NSString * const kOpenWeatherForecastWeatherCommand = @"forecast/daily";
@@ -121,6 +123,7 @@ typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
   }
   else
   {
+    
     // Call OpenWeather
     [manager GET:urlStr
       parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObj) {

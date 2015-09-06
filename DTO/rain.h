@@ -11,5 +11,6 @@
 @interface rain : JSONModel
 
 @property (nonatomic, strong) NSNumber *hour;
+@property (nonatomic, strong) NSNumber *threeHour;
 
 @end
