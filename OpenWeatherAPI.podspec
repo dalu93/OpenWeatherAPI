@@ -19,9 +19,9 @@ Pod::Spec.new do |s|
   s.homepage = 'http://www.dalbertiluca.com'
   s.authors  = { 'DAlberti Luca' =>
                  'dalberti.luca93@gmail.com' }
-  
+  s.platform = :ios, '8.0'
   s.dependency 'JSONModel'
-#   s.dependency 'AFNetworking'
+  s.dependency 'AFNetworking'
 
   s.source   = { :git => "https://github.com/dalu93/OpenWeatherAPI.git" }
   s.source_files = '**/**/*.{c,h,m,mm,cpp,a,framework,pch}'
