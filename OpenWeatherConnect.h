@@ -23,6 +23,8 @@ typedef void (^OpenWeatherSuccessBlock)(NSError *error, AbstractResponse *respon
 
 + (instancetype)sharedConnect;
 
+- (void)startWithAPIKey:(NSString *)key;
+
 /**
  *  Retrieve the current weather infos
  *

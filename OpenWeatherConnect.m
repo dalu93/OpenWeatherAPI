@@ -20,8 +20,10 @@ static NSString * const kOpenWeatherForecastWeatherCommand = @"forecast/daily";
 // Dictionary constants
 static NSString * const kRequestDictionaryUnitsKey = @"units";
 static NSString * const kRequestDictionaryUnitsValue = @"metric";
+static NSString * const kRequestDictionaryAPIKeyDefaultValue = @"null";
 static NSString * const kRequestDictionaryCountKey = @"cnt";
 static NSString * const kRequestDictionaryLocationKey = @"q";
+static NSString * const kRequestDictionaryAPIKey = @"APPID";
 
 typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
   OpenWeatherRequestCurrentWeather = 0,
@@ -31,6 +33,7 @@ typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
 @interface OpenWeatherConnect ()
 {
   AFHTTPRequestOperationManager *manager;
+  NSString *apiKey;
 }
 
 @end
@@ -60,6 +63,11 @@ typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
 }
 
 #pragma mark - Public stuffs
+- (void)startWithAPIKey:(NSString *)key
+{
+  apiKey = (key) ? key : kRequestDictionaryAPIKeyDefaultValue;
+}
+
 - (void)getCurrentWeatherForCityName:(NSString *)cityName successBlock:(OpenWeatherSuccessBlock)successBlock;
 {
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -149,7 +157,8 @@ typedef NS_ENUM(NSUInteger, OpenWeatherRequest) {
   
   NSMutableDictionary *parametersDict = [NSMutableDictionary new];
   [parametersDict addEntriesFromDictionary:@{ kRequestDictionaryLocationKey : cityName,
-                                              kRequestDictionaryUnitsKey : kRequestDictionaryUnitsValue}];
+                                              kRequestDictionaryUnitsKey : kRequestDictionaryUnitsValue,
+                                              kRequestDictionaryAPIKey : (apiKey) ? apiKey : kRequestDictionaryAPIKeyDefaultValue}];
   if (days > 0)
   {
     [parametersDict setValue:@(days) forKey:kRequestDictionaryCountKey];
